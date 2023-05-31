@@ -201,7 +201,6 @@ img {
 }
 
 #top-banner-icons div {
-    float: right;
     box-sizing: border-box;
 }
 
@@ -210,30 +209,49 @@ img {
 }
 
 #top-banner-icons a:hover {
-    background-color: #ffffff;
+    background-color: #f4f4f4;
 }
 
 #top-banner-icons #top-banner-icons-welcome {
     display: inline-block;
-    padding: 10px 0px;
-    font-size: 13px;
-    vertical-align: top;
+    font-size: 14px;
+    align-self: center;
+    padding: 0;
 }
 
 #top-banner-icons #top-banner-icons-welcome a {
     color: #000000;
+    text-align: center;
+    
 }
 
 #top-banner-icons #top-banner-icons-welcome a:hover {
     text-decoration: underline;
 }
 
-#top-banner-icons #top-banner-icons-account a img,
-#top-banner-icons #top-banner-icons-favourites a img,
-#top-banner-icons #top-banner-icons-basket a img {
-    width: 42px;
-    padding: 5px;
+#top-banner-icons #top-banner-icons-account a,
+#top-banner-icons #top-banner-icons-favourites a,
+#top-banner-icons #top-banner-icons-basket a {
     box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#top-banner-icons #top-banner-icons-account a span,
+#top-banner-icons #top-banner-icons-favourites a span,
+#top-banner-icons #top-banner-icons-basket a span { 
+    width: 100%;
+}
+#top-banner-icons #top-banner-icons-account a {
+    background-image: url(../image/logo/Icon-Account-Outline-32.png);
+}
+#top-banner-icons #top-banner-icons-favourites a {
+    background-image: url(../image/logo/Icon-Heart-Outline-32.png);
+}
+#top-banner-icons #top-banner-icons-basket a { 
+    background-image: url(../image/logo/Icon-Bag-Outline-32.png);
 }
 
 #top-banner-icons #top-banner-icons-favourites {
@@ -242,17 +260,10 @@ img {
 }
 
 #top-banner-icons #top-banner-icons-favourites #top-banner-icon-favourites-qty {
+    text-align: center;
+    font-size: 14px;
     display: block;
     color: #000000;
-    font-size: 13px;
-    position: absolute;
-    width: 100%;
-    padding-bottom: 4px;
-    text-align: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 
 #top-banner-icons #top-banner-icons-basket {
@@ -261,104 +272,45 @@ img {
 }
 
 #top-banner-icons #top-banner-icons-basket #top-banner-icon-basket-qty {
+    text-align: center;
+    font-size: 14px;
     display: block;
     color: #000000;
-    font-size: 13px;
-    position: absolute;
-    width: 42px;
-    height: 60px;
-    line-height: 52px;
-    padding-top: 8px;
-    padding-left: 10px;
-    text-align: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 14px; */
 }
 
+/* Day la gio hang */
 
-/* Product added to basket dropdown */
-
-#top-basket-heart {
-    position: absolute;
-    width: 100%;
-    top: 30px;
-    margin: 65px auto;
-    height: 0;
-    /* display: none; */
-    overflow: visible;
-    z-index: 100;
-    margin-bottom: 0;
-}
-
-#top-basket-dropdown,
-#top-heart-dropdown {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30%;
-    background-color: #ffffff;
-    padding: 10px 10px 25px 15px;
-    border: 2px solid #d0d0d0;
-    border-top: none;
-    box-sizing: border-box;
-    font-size: 16px;
-    display: none;
-    min-height: 20px;
-    padding: 10px 10px 25px 15px;
-}
-
-#top-basket-title,
-#top-heart-title {
-    text-align: center;
-    font-size: large;
-    font-weight: bolder;
-}
-
-#top-basket-content .product-block-container,
-#top-heart-content .product-block-container {
-    text-align: center;
+.modal-body .product-block-container {
+    text-align: left;
     display: flex;
+    width: 100%;
 }
 
-#top-basket-content .product-block-container h2,
-#top-basket-content .product-block-container p,
-#top-heart-content .product-block-container h2,
-#top-heart-content .product-block-container p {
+.modal-body .product-block-container h2,
+.modal-body .product-block-container p {
     padding-left: 12px;
     font-size: 15px;
     margin-top: 20px;
 }
 
-#top-basket-content .product-block-container h2,
-#top-heart-content .product-block-container h2 {
-    width: 210px;
+.modal-body .product-block-container h2 {
+    width: 50%;
 }
-
-#top-basket-content .product-block-container img,
-#top-heart-content .product-block-container img {
+.modal-body .product-block-container P {
+    width: 20%;
+}
+.modal-body .product-block-container img {
     max-height: 50px;
 }
 
-#top-basket-content .product-block-container .product-block-favourite,
-#top-basket-content .product-block-container .product-block-bag {
-    display: none;
-}
-
-#top-heart-content .product-block-container .product-block-favourite {
-    display: none;
-}
-
-#top-basket-content .product-block-container .top-basket-remove {
+.modal-body .product-block-container .top-basket-remove {
     display: block;
     background-image: url(../image/logo/icon-trash.png);
-    background-size: 30px;
-    width: 20px;
-    height: 30px;
-    margin-left: 10px;
-    padding-left: 12px;
-    font-size: 15px;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    width: 15%;
     margin-top: 10px;
 }
 
@@ -392,7 +344,7 @@ img {
 
 .nav-item>a {
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     text-align: center;
     margin: 0 35px;
@@ -718,10 +670,11 @@ img {
 }
 
 @media screen and (max-width: 560px) {
-    #top-banner-icons #top-banner-icons-account a img,
-    #top-banner-icons #top-banner-icons-favourites a img,
-    #top-banner-icons #top-banner-icons-basket a img {
+    #top-banner-icons #top-banner-icons-account a,
+    #top-banner-icons #top-banner-icons-favourites a,
+    #top-banner-icons #top-banner-icons-basket a {
         width: 28px;
+        background-size: 80%;
     }
     #top-banner-icons #top-banner-icons-welcome {
         padding: 10px 0px;
@@ -730,13 +683,18 @@ img {
     }
     .section-search p a,
     .section-search p span  {
-        font-size: 12px;
+        font-size: 14px;
+        margin-top: 4px;
+    }
+    #top-banner-icons #top-banner-icons-basket #top-banner-icon-basket-qty {
+        text-align: center;
+        font-size: 10px;
+        display: block;
+        color: #000000;
+        align-items: center;
+        position: absolute;
+        bottom: 14px;
     }
 }
 
 
-/* Modal chi tiet san pham */
-
-.Khoi {
-    padding: 0
-}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Maverick Dress</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="./js/function.js"></script>
     <script src="./js/jquery-3.6.4.js"></script>
@@ -27,17 +27,6 @@
             <div class="top-bar-link col-md-4 col-sm-4">LY HOANG SON - Student1457465</div>
         </div>
     </div>
-    <!-- Day la gio hang -->
-    <div id="top-basket-heart">
-        <div id="top-basket-dropdown">
-            <div id="top-basket-title">CART</div>
-            <div id="top-basket-content"></div>
-        </div>
-        <div id="top-heart-dropdown">
-            <div id="top-heart-title">FAVOURITE</div>
-            <div id="top-heart-content"></div>
-        </div>
-    </div>
     <div class="container-fluid">
         <div class="row" id="top-banner">
             <div id="top-banner-logo" class="col-lg-4 col-md-4 col-12">
@@ -49,20 +38,121 @@
                 <input class="search-text" type="text" name="xSearch" value="" placeholder="Search" maxlength="40" id="search_input">
                 <input id="search-button" class="search-button" type="button" value="">
             </div>
-            <div class="col-lg-4 col-md-4 col-4 justify-content-end" id="top-banner-icons">
-                <div id="top-banner-icons-welcome">
-                    <a href="">Log in</a>
+            <div class="col-lg-4 col-md-4 col-4 justify-content-end row" id="top-banner-icons">
+                <div class="col-2" id="top-banner-icons-welcome">
+                    <a href="#"  data-toggle="modal" data-target="#modal-login">Log in</a>
+                    <div class="modal" id="modal-login">
+                        <div class="modal-dialog">
+                          <div class="modal-content">  
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">CONTACT US</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <form class="px-4 py-3">
+                                    <div class="form-group">
+                                      <label for="exampleDropdownFormEmail1">Email address</label>
+                                      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="exampleDropdownFormPassword1">Password</label>
+                                      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                      <label class="form-check-label" for="dropdownCheck">
+                                        Remember me
+                                      </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                  </form>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Sign up</a>
+                                  <a class="dropdown-item" href="#">Forgot password?</a>
+                                  
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                            </div>
+                            
+                          </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="top-banner-icons-account">
-                    <a title="My Account"><img src="./image/logo/Icon-Account-Outline-32.png" alt="Account"></a>
+                <div class="col-2" id="top-banner-icons-account">
+                    <a title="My Account" data-toggle="modal" data-target="#modal-account"></a>
+                    <div class="modal" id="modal-account">
+                        <div class="modal-dialog">
+                            <div class="modal-content">  
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h4 class="modal-title">ACCOUNT</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              <!-- Modal body -->
+                              <div class="modal-body">
+                                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis voluptatibus placeat cumque itaque! Laudantium, distinctio corrupti sapiente laborum in beatae?
+                              </div>
+                              
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                              </div>  
+                            </div>
+                          </div>
+                    </div>
                 </div>
-                <div id="top-banner-icons-favourites" onclick="heart()">
-                    <a title="My Saved Items"><img src="./image/logo/Icon-Heart-Outline-32.png" alt=""><span id="top-banner-icon-favourites-qty"></span></a>
-                
+                <div class="col-2" id="top-banner-icons-favourites"  onclick="heart()">
+                    <a title="My Saved Items" data-toggle="modal" data-target="#modal-heart"><span id="top-banner-icon-favourites-qty"></span></a>
+                    <div class="modal" id="modal-heart">
+                        <div class="modal-dialog">
+                            <div class="modal-content">  
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h4 class="modal-title">HEART</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              <!-- Modal body -->
+                              <div class="modal-body">
+                                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis voluptatibus placeat cumque itaque! Laudantium, distinctio corrupti sapiente laborum in beatae?
+                              </div>
+                              
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                              </div>  
+                            </div>
+                          </div>
+                    </div>    
                 </div>
-                <div id="top-banner-icons-basket" onclick="basket()">
-                    <a title="My Bag"><img src="./image/logo/Icon-Bag-Outline-32.png" alt=""><span id="top-banner-icon-basket-qty"></span></a>
-                
+                <div class="col-2" id="top-banner-icons-basket" onclick="basket()">
+                    <a title="My Bag" data-toggle="modal" data-target="#modal-bag"><span id="top-banner-icon-basket-qty"></span></a>                   
+                    <div class="modal" id="modal-bag">
+                        <div class="modal-dialog">
+                          <div class="modal-content">  
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">BAG</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis voluptatibus placeat cumque itaque! Laudantium, distinctio corrupti sapiente laborum in beatae?
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>
@@ -130,26 +220,32 @@
                             
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <form class="px-4 py-3">
-                                    <div class="form-group">
-                                      <label for="exampleDropdownFormEmail1">Email address</label>
-                                      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="exampleDropdownFormPassword1">Password</label>
-                                      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                                    </div>
-                                    <div class="form-check">
-                                      <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                      <label class="form-check-label" for="dropdownCheck">
-                                        Remember me
-                                      </label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Sign in</button>
-                                  </form>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="#">Sign up</a>
-                                  <a class="dropdown-item" href="#">Forgot password?</a>
+                                  <div id="info-page">
+                    
+                        <h2>Helpline Number</h2>
+                    
+                        <p>In case of any query please call one of our customer service representatives on
+                            <a href="#">000</a>  or email <a href="#">exam@gmail.com</a></p>
+                        <p>Our helpline is staffed between 9:30am and 4:30pm Monday to Friday.</p>
+                                                             
+                        <h2>Contact and Company Details</h2>
+                    
+                        <ul class="link-list">
+                            <li>
+                                <span class="link-list-title">Email </span>
+                                <span class="link-list-info"><a href="#"></a></span>
+                            </li>
+                            <li>
+                                <span class="link-list-title">Telephone</span>
+                                <span class="link-list-info">                                    </span>
+                            </li>
+                    
+                            <li>
+                                <span class="link-list-title">Zalo</span>
+                                <span class="link-list-info">000 0000 000</span>
+                            </li>                   
+                        </ul> 
+                    </div>                                
                             </div>
                             
                             <!-- Modal footer -->
@@ -159,7 +255,8 @@
                             
                           </div>
                         </div>
-                      </div>
+                    </div>
+                    
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#modal-help" >HELP</a>                    
@@ -168,13 +265,14 @@
                           <div class="modal-content">  
                             <!-- Modal Header -->
                             <div class="modal-header">
-                              <h4 class="modal-title">Modal Heading</h4>
+                              <h4 class="modal-title">HELP</h4>
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             
                             <!-- Modal body -->
                             <div class="modal-body">
-                              Modal body..
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                              Obcaecati placeat eos unde a, expedita ipsum perferendis in? Fuga, molestiae. Rerum.
                             </div>
                             
                             <!-- Modal footer -->

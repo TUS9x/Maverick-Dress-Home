@@ -66,10 +66,3 @@ $(function() {
     
 })
 
-function fx() {
-        if ((document.body.scrollTop) > 120 || (document.documentElement.scrollTop > 120)) {
-            document.getElementById('container1').style.position= 'fixed';
-        } else {
-            document.getElementById('container1').style.position= 'sticky';
-        }
-}
