@@ -63,13 +63,13 @@ $(function() {
         document.getElementById('section-search--span__soft-hight-to-low').classList.add('section-search-select')
     })
 
-    
+
 })
 
 function fx() {
-        if ((document.body.scrollTop) > 120 || (document.documentElement.scrollTop > 120)) {
-            document.getElementById('container1').style.position= 'fixed';
-        } else {
-            document.getElementById('container1').style.position= 'sticky';
-        }
+    if ((document.body.scrollTop) > 120 || (document.documentElement.scrollTop > 120)) {
+        document.getElementById('container1').style.position = 'fixed';
+    } else {
+        document.getElementById('container1').style.position = 'sticky';
+    }
 }
