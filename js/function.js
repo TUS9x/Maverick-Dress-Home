@@ -15,16 +15,8 @@ function loadData(arr) {
     })
     $('#product-blocks').html(s)
     $('.section-search .section-search-total').html("Total Products: " + arr.length)
-        // $('#search_input').keyup(function() {
-        //     var value = $(this).val().toLowerCase();
-        //     $('#product-blocks .product-block-container').filter(function() {
-        //         $(this).toggle(    $(this).text().toLowerCase().indexOf(value) > -1     )
-        //         console.log($(this).text().toLowerCase().indexOf(value), $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1))
-        //     });
-        // });
-        // $('#product-blocks').html(s)
-
     let list = document.querySelectorAll('#product-blocks a .product-block-container');
+    let bag = [];
     list.forEach(item => {
         item.addEventListener('click', function(event) {
             // su kien click cho bag
@@ -48,7 +40,7 @@ function loadData(arr) {
                             <img src="${v.img}" onclick="chiTiet(${v.id})" data-toggle="modal" data-target="#modelChiTietSanPham">
                             <h2 onclick="chiTiet(${v.id})" data-toggle="modal" data-target="#modelChiTietSanPham">${v.id}-${v.name}</h2>
                             <img class="product-block-favourite" src="./image/logo/Icon-Heart-Outline-32.png" >
-                            <input type="number" name="" id="number">
+                            <input type="number" name="" id="number" value="1">
                             <p class="product-block-prices">Price: ${v.price}</p>
                             <div class="top-basket-remove" onclick= "Remove(${v.id})"></div>
                             </div>
@@ -68,6 +60,9 @@ function loadData(arr) {
             }
         })
     })
+    // SET day
+    const d = new Date();
+    document.getElementById("time").innerHTML = d;
 }
 
 function Remove(v) {
