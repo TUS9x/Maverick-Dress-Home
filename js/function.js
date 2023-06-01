@@ -29,26 +29,43 @@ function loadData(arr) {
         item.addEventListener('click', function(event) {
             // su kien click cho bag
             if (event.target.classList.contains('product-block-bag')) {
-                var itemNew = item.cloneNode(true);
+                // var itemNew = item.cloneNode(true);
+                let idbag = this.getAttribute('data-id');
+                console.log(idbag);
                 let checkIsset = false;
                 let listCart = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body');
                 listCart.forEach(cart => {
-                    if (cart.getAttribute('data-id') == itemNew.getAttribute('data-id')) {
+                    if (cart.getAttribute('data-id') == idbag) {
                         checkIsset = true;
                     }
                 })
                 if (checkIsset == false) {
-                    document.querySelector('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body').appendChild(itemNew);
+                    let bagitem = '';
+                    $.each(product, function (k, v) {
+                        if (v.id == idbag) {
+                            bagitem = `<a class="data-cart" >
+                            <div class="product-block-container" data-id="${v.id}">
+                            <img src="${v.img}" onclick="chiTiet(${v.id})" data-toggle="modal" data-target="#modelChiTietSanPham">
+                            <h2 onclick="chiTiet(${v.id})" data-toggle="modal" data-target="#modelChiTietSanPham">${v.id}-${v.name}</h2>
+                            <img class="product-block-favourite" src="./image/logo/Icon-Heart-Outline-32.png" >
+                            <input type="number" name="" id="number">
+                            <p class="product-block-prices">Price: ${v.price}</p>
+                            <div class="top-basket-remove" onclick= "Remove(${v.id})"></div>
+                            </div>
+                            </a>`
+                            bag.push(bagitem);
+                        }
+                        $('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body').html(bag);
+                    })
                 }
-            }
             // su kien click cho heart
 
             //Them number cho Bag    
-            let listCart = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body  .product-block-container');
-            document.getElementById('top-banner-icon-basket-qty').innerHTML = listCart.length;
-            console.log(listCart)
+            let listCart1 = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body  .product-block-container');
+            document.getElementById('top-banner-icon-basket-qty').innerHTML = listCart1.length;
+            console.log(listCart1)
                 //Them number cho Heart
-
+            }
         })
     })
 }
@@ -133,7 +150,7 @@ function chiTiet(id) {
                 </div>
                     `
             s2 = `
-            <div>
+            <div class="col-12">
             <div class="accordion mt-3" id="accordionExample">
             <div class="card">
                 <div class="card-header" id="headingTwo">
