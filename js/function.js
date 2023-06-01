@@ -31,20 +31,20 @@ function loadData(arr) {
             if (event.target.classList.contains('product-block-bag')) {
                 var itemNew = item.cloneNode(true);
                 let checkIsset = false;
-                let listCart = document.querySelectorAll('#top-basket-content  .product-block-container');
+                let listCart = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body');
                 listCart.forEach(cart => {
                     if (cart.getAttribute('data-id') == itemNew.getAttribute('data-id')) {
                         checkIsset = true;
                     }
                 })
                 if (checkIsset == false) {
-                    document.querySelector('#top-basket-content').appendChild(itemNew);
+                    document.querySelector('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body').appendChild(itemNew);
                 }
             }
             // su kien click cho heart
 
             //Them number cho Bag    
-            let listCart = document.querySelectorAll('#top-basket-content  .product-block-container');
+            let listCart = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body  .product-block-container');
             document.getElementById('top-banner-icon-basket-qty').innerHTML = listCart.length;
             console.log(listCart)
                 //Them number cho Heart
@@ -54,7 +54,7 @@ function loadData(arr) {
 }
 
 function Remove(v) {
-    let listCart = document.querySelectorAll('#top-basket-content  .product-block-container');
+    let listCart = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body .product-block-container');
     listCart.forEach(item => {
         if (item.getAttribute('data-id') == v) {
             item.remove();
