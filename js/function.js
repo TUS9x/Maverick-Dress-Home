@@ -133,7 +133,7 @@ function chiTiet(id) {
                 </div>
                     `
             s2 = `
-            <div>
+            <div class="col-12">
             <div class="accordion mt-3" id="accordionExample">
             <div class="card">
                 <div class="card-header" id="headingTwo">
