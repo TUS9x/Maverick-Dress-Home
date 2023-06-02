@@ -41,14 +41,15 @@
                 <input id="search-button" class="search-button" type="button" value="">
             </div>
             <div class="col-lg-4 col-md-4 col-4 justify-content-end row" id="top-banner-icons">
-                <div class="col-3 " id="top-banner-icons-welcome">
-                    <a href="#" data-toggle="modal" data-target="#modal-login">Log in</a>
+                <div class="col-2" id="top-banner-icons-welcome">
+                    <a href="#"  data-toggle="modal" data-target="#modal-login">Log in</a>
                     <div class="modal" id="modal-login">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <!-- Modal Header -->
                                 <div class="modal-header">
                                     <h4 class="modal-title">LOG IN</h4>
+
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
 
@@ -57,19 +58,17 @@
                                     <form class="px-4 py-3">
                                         <div class="form-group">
                                             <label for="exampleDropdownFormEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleDropdownFormEmail1"
-                                                placeholder="email@example.com">
+                                            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleDropdownFormPassword1">Password</label>
-                                            <input type="password" class="form-control"
-                                                id="exampleDropdownFormPassword1" placeholder="Password">
+                                            <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
                                         </div>
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="dropdownCheck">
                                             <label class="form-check-label" for="dropdownCheck">
-                                                Remember me
-                                            </label>
+                                        Remember me
+                                      </label>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Sign in</button>
                                     </form>
@@ -100,8 +99,7 @@
                                 </div>
                                 <!-- Modal body -->
                                 <div class="modal-body">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis voluptatibus
-                                    placeat cumque itaque! Laudantium, distinctio corrupti sapiente laborum in beatae?
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis voluptatibus placeat cumque itaque! Laudantium, distinctio corrupti sapiente laborum in beatae?
                                 </div>
 
                                 <!-- Modal footer -->
@@ -112,9 +110,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2" id="top-banner-icons-favourites">
-                    <a title="My Saved Items" data-toggle="modal" data-target="#modal-heart"><span
-                            id="top-banner-icon-favourites-qty"></span></a>
+                <div class="col-2" id="top-banner-icons-favourites" onclick="heart()">
+                    <a title="My Saved Items" data-toggle="modal" data-target="#modal-heart"><span id="top-banner-icon-favourites-qty"></span></a>
                     <div class="modal" id="modal-heart">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -125,8 +122,7 @@
                                 </div>
                                 <!-- Modal body -->
                                 <div class="modal-body">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis voluptatibus
-                                    placeat cumque itaque! Laudantium, distinctio corrupti sapiente laborum in beatae?
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis voluptatibus placeat cumque itaque! Laudantium, distinctio corrupti sapiente laborum in beatae?
                                 </div>
 
                                 <!-- Modal footer -->
@@ -138,8 +134,7 @@
                     </div>
                 </div>
                 <div class="col-2" id="top-banner-icons-basket">
-                    <a title="My Bag" data-toggle="modal" data-target="#modal-bag"><span
-                            id="top-banner-icon-basket-qty"></span></a>
+                    <a title="My Bag" data-toggle="modal" data-target="#modal-bag"><span id="top-banner-icon-basket-qty"></span></a>
                     <div class="modal" id="modal-bag">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -160,11 +155,14 @@
                                         </div>
                                         <div class="cart-total-price justify-content-end"></div>
                                     </div>
+
                                 </div>
 
                                 <!-- Modal footer -->
                                 <div class="modal-footer">
+
                                     <button type="button" class="btn btn-danger">Buy</button>
+
                                     <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
                                 </div>
 
@@ -198,8 +196,7 @@
 
                                 <!-- Modal body -->
                                 <div class="modal-body">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis voluptatibus
-                                    placeat cumque itaque! Laudantium, distinctio corrupti sapiente laborum in beatae?
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis voluptatibus placeat cumque itaque! Laudantium, distinctio corrupti sapiente laborum in beatae?
                                 </div>
 
                                 <!-- Modal footer -->
@@ -245,10 +242,8 @@
 
                                         <h2>Helpline Number</h2>
 
-                                        <p>In case of any query please call one of our customer service representatives
-                                            on
-                                            <a href="#">000</a> or email <a href="#">exam@gmail.com</a>
-                                        </p>
+                                        <p>In case of any query please call one of our customer service representatives on
+                                            <a href="#">000</a> or email <a href="#">exam@gmail.com</a></p>
                                         <p>Our helpline is staffed between 9:30am and 4:30pm Monday to Friday.</p>
 
                                         <h2>Contact and Company Details</h2>
@@ -260,7 +255,7 @@
                                             </li>
                                             <li>
                                                 <span class="link-list-title">Telephone</span>
-                                                <span class="link-list-info"> </span>
+                                                <span class="link-list-info">                                    </span>
                                             </li>
 
                                             <li>
@@ -294,8 +289,7 @@
 
                                 <!-- Modal body -->
                                 <div class="modal-body">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-                                    Obcaecati placeat eos unde a, expedita ipsum perferendis in? Fuga, molestiae. Rerum.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Obcaecati placeat eos unde a, expedita ipsum perferendis in? Fuga, molestiae. Rerum.
                                 </div>
 
                                 <!-- Modal footer -->
@@ -435,8 +429,7 @@
         <div id="footer-inner" class="row">
             <div id="footer-left" class="col-md-8 col-sm-6">
                 Time: &nbsp; <a id="time" href="#">000</a><br>
-                Email:&nbsp;<a href="#">ex@ex.com</a>&nbsp;&nbsp; &nbsp;&nbsp;Telephone:&nbsp; <a
-                    href="tel:+441432343532">0000&nbsp;00&nbsp;00&nbsp;00</a>&nbsp;&nbsp;
+                Email:&nbsp;<a href="#">ex@ex.com</a>&nbsp;&nbsp; &nbsp;&nbsp;Telephone:&nbsp;    <a href="tel:+441432343532">0000&nbsp;00&nbsp;00&nbsp;00</a>&nbsp;&nbsp;
                 <br> Fax:
                 <br> Maverick Dress, Moon
                 <br> Instagram:

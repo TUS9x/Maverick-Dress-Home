@@ -238,18 +238,22 @@ img {
     display: flex;
     align-items: center;
 }
+
 #top-banner-icons #top-banner-icons-account a span,
 #top-banner-icons #top-banner-icons-favourites a span,
-#top-banner-icons #top-banner-icons-basket a span { 
+#top-banner-icons #top-banner-icons-basket a span {
     width: 100%;
 }
+
 #top-banner-icons #top-banner-icons-account a {
     background-image: url(../image/logo/Icon-Account-Outline-32.png);
 }
+
 #top-banner-icons #top-banner-icons-favourites a {
     background-image: url(../image/logo/Icon-Heart-Outline-32.png);
 }
-#top-banner-icons #top-banner-icons-basket a { 
+
+#top-banner-icons #top-banner-icons-basket a {
     background-image: url(../image/logo/Icon-Bag-Outline-32.png);
 }
 
@@ -280,6 +284,7 @@ img {
     bottom: 14px; */
 }
 
+
 /* Day la gio hang */
 
 .modal-body .product-block-container {
@@ -298,9 +303,11 @@ img {
 .modal-body .product-block-container h2 {
     width: 50%;
 }
+
 .modal-body .product-block-container P {
     width: 20%;
 }
+
 .modal-body .product-block-container img {
     margin-top: 10px;
     max-height: 50px;
@@ -340,20 +347,19 @@ img {
 
 /* TOP MENU */
 
-
 .navbar {
     border-top: 1px solid #d0d0d0;
     border-bottom: 1px solid #d0d0d0;
-    padding-top: 0 ;
+    padding-top: 0;
     padding-bottom: 0;
 }
 
-.navbar>.navbar-brand {    
-    padding-top: 0 ;
+.navbar>.navbar-brand {
+    padding-top: 0;
     padding-bottom: 0;
 }
 
-.navbar>.navbar-brand h2 {    
+.navbar>.navbar-brand h2 {
     text-align: center;
 }
 
@@ -377,16 +383,23 @@ img {
     color: #cc0000 !important;
     font-size: large !important;
 }
+
 .nav-item .dropdown-menu .dropdown-item-text {
     width: max-content;
 }
-.nav-item .dropdown-menu .dropdown-item-text .container-fluid div {justify-content: center;}
+
+.nav-item .dropdown-menu .dropdown-item-text .container-fluid div {
+    justify-content: center;
+}
+
 .nav-item:hover {
     background-color: #b6b6b6 !important;
 }
+
 .nav-item .dropdown-menu .dropdown-item {
     padding: .25rem 1.3rem;
 }
+
 .nav-item .dropdown-menu .dropdown-item:hover {
     cursor: default;
     background-color: #b6b6b6;
@@ -394,8 +407,8 @@ img {
 }
 
 
-
 /* Top menu dropdown div */
+
 
 /* Page descripton */
 
@@ -443,7 +456,6 @@ img {
 
 /* DAY LA BRAND */
 
-
 #home-page-brands {
     width: 100%;
     margin: 5px auto;
@@ -490,6 +502,7 @@ img {
     box-sizing: border-box;
     text-align: left;
 }
+
 .section-search p a {
     font-weight: 500;
     padding-right: 0;
@@ -547,9 +560,9 @@ img {
 /* 	day la product */
 
 #product-blocks {
-    width: 100% ;
+    width: 100%;
     overflow: auto;
-    margin: 0 auto;    
+    margin: 0 auto;
 }
 
 #product-blocks .product-block-container {
@@ -561,7 +574,11 @@ img {
     border: 1px solid #e0e0e0;
     border-radius: 5px;
 }
-#product-blocks .data-cart{margin: 0 auto;}
+
+#product-blocks .data-cart {
+    margin: 0 auto;
+}
+
 #product-blocks .product-block-container .top-basket-remove {
     display: none
 }
@@ -714,7 +731,7 @@ img {
 
     }
     .section-search p a,
-    .section-search p span  {
+    .section-search p span {
         font-size: 14px;
         margin-top: 4px;
     }
@@ -728,5 +745,3 @@ img {
         bottom: 14px;
     }
 }
-
-
