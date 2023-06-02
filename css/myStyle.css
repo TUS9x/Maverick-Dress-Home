@@ -93,8 +93,7 @@ img {
     margin: 10px auto;
     box-sizing: border-box;
     text-align: left;
-    color: #000000;
-    font-size: 0;
+    color: #000000; 
     position: relative;
     margin: 10px 0;
     padding-left: 0;
@@ -123,6 +122,7 @@ img {
 /* Top Banner Search */
 
 #top-banner-search {
+    margin: auto;
     top: 5px;
     height: 39px;
     box-sizing: border-box;
@@ -198,6 +198,7 @@ img {
     box-sizing: border-box;
     padding-left: 0;
     padding-right: 0;
+    margin: 0;
 }
 
 #top-banner-icons div {
@@ -208,21 +209,19 @@ img {
     display: block;
 }
 
-#top-banner-icons a:hover {
+#top-banner-icons div:hover {
     background-color: #f4f4f4;
 }
 
 #top-banner-icons #top-banner-icons-welcome {
-    display: inline-block;
-    font-size: 14px;
-    align-self: center;
     padding: 0;
+    align-self: center;
 }
 
 #top-banner-icons #top-banner-icons-welcome a {
     color: #000000;
+    font-size: 14px;
     text-align: center;
-    
 }
 
 #top-banner-icons #top-banner-icons-welcome a:hover {
@@ -276,6 +275,7 @@ img {
     font-size: 14px;
     display: block;
     color: #000000;
+    padding-top: 5px;
     /* position: absolute;
     bottom: 14px; */
 }
@@ -302,18 +302,41 @@ img {
     width: 20%;
 }
 .modal-body .product-block-container img {
+    margin-top: 10px;
     max-height: 50px;
 }
 
-.modal-body .product-block-container .top-basket-remove {
+.modal-body .product-block-container .top-basket-remove,
+.modal-body .product-block-container .product-block-favourite,
+.modal-body .product-block-container .product-block-bag {
     display: block;
-    background-image: url(../image/logo/icon-trash.png);
     background-repeat: no-repeat;
     background-size: 60%;
     width: 15%;
     margin-top: 10px;
+    background-position: center center;
 }
-
+.modal-body .product-block-container .product-block-favourite {
+    background-image: url(../image/logo/Icon-Heart-Outline-32.png);
+}
+.modal-body .product-block-container .product-block-bag {
+    background-image: url(../image/logo/Icon-Bag-Outline-32.png);
+}
+.modal-body .product-block-container .top-basket-remove {
+    background-image: url(../image/logo/icon-trash.png);
+}
+  
+.modal-body .cart-product .product-block-container h2:hover{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+.modal-body .cart-product .product-block-container input {
+    width: 10%;
+    color: #000000 ;
+    height: 34px;
+    text-align: center;
+    margin-top: 20px;
+}
 
 /* TOP MENU */
 
@@ -663,6 +686,8 @@ img {
     width: 100%;
 }
 
+
+
 @media screen and (max-width: 767px) {
     #top-bar-inner {
         display: none;
@@ -673,13 +698,20 @@ img {
     #top-banner-icons #top-banner-icons-account a,
     #top-banner-icons #top-banner-icons-favourites a,
     #top-banner-icons #top-banner-icons-basket a {
-        width: 28px;
-        background-size: 80%;
+        /* width: 28px; */
+        background-size: 90%;
     }
-    #top-banner-icons #top-banner-icons-welcome {
+    #top-banner-icons #top-banner-icons-welcome a {
         padding: 10px 0px;
         font-size: 10px;
         vertical-align: top;
+    }
+    #top-banner-icons {
+        margin: 0;
+    }
+    #top-banner-icons div {
+        padding: 0 2px;
+
     }
     .section-search p a,
     .section-search p span  {

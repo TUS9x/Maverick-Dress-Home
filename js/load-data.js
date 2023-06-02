@@ -42,7 +42,7 @@ $(function() {
         let a = document.querySelectorAll('.section-search p a');
         a.forEach(b => b.classList.remove('section-search-select'))
         console.log(a.classList)
-        document.getElementById('section-search--span__sort-by-name').classList.add('section-search-select')
+        this.classList.add('section-search-select')
     })
     $('#section-search--span__soft-low-to-hight').click(function() {
         var query = $('#search_input').val().toLowerCase();
@@ -51,7 +51,7 @@ $(function() {
         loadData(product_timkiem);
         let a = document.querySelectorAll('.section-search p a');
         a.forEach(b => b.classList.remove('section-search-select'))
-        document.getElementById('section-search--span__soft-low-to-hight').classList.add('section-search-select')
+        this.classList.add('section-search-select')
     })
     $('#section-search--span__soft-hight-to-low').click(function() {
         var query = $('#search_input').val().toLowerCase();
@@ -60,7 +60,7 @@ $(function() {
         loadData(product_timkiem);
         let a = document.querySelectorAll('.section-search p a');
         a.forEach(b => b.classList.remove('section-search-select'))
-        document.getElementById('section-search--span__soft-hight-to-low').classList.add('section-search-select')
+        this.classList.add('section-search-select')
     })
 
 

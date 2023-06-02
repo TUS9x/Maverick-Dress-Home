@@ -1,7 +1,8 @@
 //Dinh nghia ham
+let bag = [];
 function loadData(arr) {
     let s = '';
-    $.each(arr, function(i, v) {
+    $.each(arr, function (i, v) {
         s += `<a class="data-cart" >
         <div class="product-block-container" data-id="${v.id}">
         <img src="${v.img}" onclick="chiTiet(${v.id})" data-toggle="modal" data-target="#modelChiTietSanPham">
@@ -9,23 +10,22 @@ function loadData(arr) {
         <img class="product-block-favourite" src="./image/logo/Icon-Heart-Outline-32.png" >
         <img class="product-block-bag" src="./image/logo/Icon-Bag-Outline-32.png" >
         <p class="product-block-prices">Price: ${v.price}</p>
-        <div class="top-basket-remove" onclick= "Remove(${v.id})"></div>
         </div>
         </a>`
     })
     $('#product-blocks').html(s)
     $('.section-search .section-search-total').html("Total Products: " + arr.length)
     let list = document.querySelectorAll('#product-blocks a .product-block-container');
-    let bag = [];
+
     list.forEach(item => {
-        item.addEventListener('click', function(event) {
+        item.addEventListener('click', function (event) {
             // su kien click cho bag
             if (event.target.classList.contains('product-block-bag')) {
                 // var itemNew = item.cloneNode(true);
                 let idbag = this.getAttribute('data-id');
                 console.log(idbag);
                 let checkIsset = false;
-                let listCart = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body');
+                let listCart = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body .cart-product');
                 listCart.forEach(cart => {
                     if (cart.getAttribute('data-id') == idbag) {
                         checkIsset = true;
@@ -33,29 +33,41 @@ function loadData(arr) {
                 })
                 if (checkIsset == false) {
                     let bagitem = '';
+                    let tong=0;
                     $.each(product, function (k, v) {
                         if (v.id == idbag) {
-                            bagitem = `<a class="data-cart" >
+                            bagitem = `
                             <div class="product-block-container" data-id="${v.id}">
                             <img src="${v.img}" onclick="chiTiet(${v.id})" data-toggle="modal" data-target="#modelChiTietSanPham">
                             <h2 onclick="chiTiet(${v.id})" data-toggle="modal" data-target="#modelChiTietSanPham">${v.id}-${v.name}</h2>
-                            <img class="product-block-favourite" src="./image/logo/Icon-Heart-Outline-32.png" >
-                            <input type="number" name="" id="number" value="1">
+                            <div class="product-block-favourite"></div>
+                            <input class="cart-quantity-input .form-control" type="number" value="1" >
                             <p class="product-block-prices">Price: ${v.price}</p>
                             <div class="top-basket-remove" onclick= "Remove(${v.id})"></div>
                             </div>
-                            </a>`
+                            `
                             bag.push(bagitem);
                         }
-                        $('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body').html(bag);
+                        $('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body .cart-product').html(bag);
                     })
                 }
-            // su kien click cho heart
+                // su kien click cho heart
 
-            //Them number cho Bag    
-            let listCart1 = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body  .product-block-container');
-            document.getElementById('top-banner-icon-basket-qty').innerHTML = listCart1.length;
-            console.log(listCart1)
+                //Them number cho Bag    
+                let listCart1 = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .cart-product .product-block-container');
+                document.getElementById('top-banner-icon-basket-qty').innerHTML = listCart1.length;
+                var total=0;
+                for (var i = 0; i < listCart1.length; i++)
+                 {  
+                    var cart_id = listCart1[i].getAttribute('data-id');
+                    var prices=arr[cart_id].price;                    
+                    var quantity =  listCart1[i].getElementsByClassName('cart-quantity-input');
+                    console.log(quantity)
+                    var number = quantity*1 // lấy giá trị trong thẻ input
+                    total = total + (prices * number)
+                }
+                $('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body .cart-total .cart-total-price').html(total);
+
                 //Them number cho Heart
             }
         })
@@ -64,15 +76,18 @@ function loadData(arr) {
     const d = new Date();
     document.getElementById("time").innerHTML = d;
 }
+//   total
+
 
 function Remove(v) {
-    let listCart = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body .product-block-container');
-    listCart.forEach(item => {
-        if (item.getAttribute('data-id') == v) {
-            item.remove();
+    let listCart = document.querySelectorAll('#top-banner-icons-basket #modal-bag .modal-dialog .modal-body .cart-product .product-block-container');
+    for(var i=0;i<listCart.length;i++){
+        if (listCart[i].getAttribute('data-id') == v) {
+            listCart[i].remove();
+            bag.splice(i, 1);
             return;
         }
-    })
+    }
     document.getElementById('top-banner-icon-basket-qty').innerHTML = listCart.length - 1;
 }
 
@@ -91,7 +106,7 @@ function search_by_name() {
     var query = $('#search_input').val().toLowerCase();
     product_timkiem = timkiem(product, query)
     let s = []
-    $.each(product_timkiem, function(key, value) {
+    $.each(product_timkiem, function (key, value) {
         s.push(value.name)
     });
     $("#search_input").autocomplete({
@@ -121,7 +136,7 @@ function sortByValueDecrease(a, b) {
 function chiTiet(id) {
     localStorage.setItem("idProduct", id)
     let s1, s2 = ''
-    $.each(product, function(k, v) {
+    $.each(product, function (k, v) {
         if (v.id == id) {
             s1 = `
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
@@ -135,8 +150,8 @@ function chiTiet(id) {
                     <div class="product-block-container" data-id="${v.id}">
                         <h1>${v.name}</h1>
                         <p class="product-block-prices">Price: ${v.price}</p>
-                        <img class="product-block-favourite" src="./image/logo/Icon-Heart-Outline-32.png" >
-                        <img class="product-block-bag" src="./image/logo/Icon-Bag-Outline-32.png" >
+                        <div class="product-block-favourite"></div>
+                        <div class="product-block-bag"></div>
                         <div class="top-basket-remove" onclick= "Remove(${v.id})">
                         </div>                    
                         </div>
